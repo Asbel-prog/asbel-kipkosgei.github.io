@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Asbel Kipkosgei – Freelance CV</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=DM+Mono:wght@400;500&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --navy:    #0D1B2A;
+      --teal:    #00897B;
+      --teal2:   #26A69A;
+      --teal-lt: #E0F2F1;
+      --teal-bg: #F0FAFA;
+      --gold:    #F6A623;
+      --white:   #FFFFFF;
+      --gray:    #F4F6F8;
+      --text:    #1C2B33;
+      --muted:   #5C7A85;
+      --border:  #C8DFE0;
+      --tag-bg:  #E0F2F1;
+      --tag-txt: #00695C;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: #EAF2F2;
+      color: var(--text);
+      min-height: 100vh;
+      padding: 32px 16px;
+    }
+
+    /* ── PAGE WRAPPER ── */
+    .page {
+      max-width: 900px;
+      margin: 0 auto;
+      background: var(--white);
+      border-radius: 4px;
+      overflow: hidden;
+      box-shadow: 0 8px 48px rgba(0,0,0,0.13);
+    }
+
+    /* ── HEADER ── */
+    header {
+      background: var(--navy);
+      padding: 52px 52px 40px;
+      position: relative;
+      overflow: hidden;
+    }
+    header::before {
+      content: '';
+      position: absolute;
+      top: -60px; right: -60px;
+      width: 280px; height: 280px;
+      border-radius: 50%;
+      border: 40px solid rgba(0,137,123,0.18);
+    }
+    header::after {
+      content: '';
+      position: absolute;
+      bottom: -40px; left: 200px;
+      width: 160px; height: 160px;
+      border-radius: 50%;
+      border: 28px solid rgba(246,166,35,0.12);
+    }
+
+    .header-top {
+      display: flex;
+      align-items: flex-end;
+      gap: 32px;
+      margin-bottom: 20px;
+    }
+
+    .avatar {
+      width: 80px; height: 80px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--teal), var(--teal2));
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 32px;
+      color: white;
+      font-weight: 800;
+      flex-shrink: 0;
+      border: 3px solid rgba(255,255,255,0.15);
+    }
+
+    .header-name h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 38px;
+      font-weight: 800;
+      color: var(--white);
+      letter-spacing: -0.5px;
+      line-height: 1.1;
+    }
+    .header-name h1 span { color: var(--gold); }
+
+    .title-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 10px;
+    }
+    .pill {
+      background: rgba(0,137,123,0.28);
+      border: 1px solid rgba(0,137,123,0.5);
+      color: #80CBC4;
+      font-size: 11.5px;
+      font-weight: 600;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 20px;
+    }
+
+    .contact-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 24px;
+      margin-top: 22px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      color: #B0BEC5;
+      font-size: 12.5px;
+      font-family: 'DM Mono', monospace;
+    }
+    .contact-item .icon {
+      color: var(--teal2);
+      font-size: 13px;
+    }
+    .contact-item a {
+      color: #B0BEC5;
+      text-decoration: none;
+    }
+    .contact-item a:hover { color: var(--teal2); }
+
+    /* ── BODY LAYOUT ── */
+    .cv-body {
+      display: grid;
+      grid-template-columns: 1fr 280px;
+      gap: 0;
+    }
+
+    .main-col {
+      padding: 40px 44px 40px 52px;
+      border-right: 1px solid var(--border);
+    }
+
+    .side-col {
+      padding: 40px 36px;
+      background: var(--teal-bg);
+    }
+
+    /* ── SECTION ── */
+    .section { margin-bottom: 36px; }
+    .section:last-child { margin-bottom: 0; }
+
+    .section-title {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .section-title::after {
+      content: '';
+      flex: 1;
+      height: 2px;
+      background: linear-gradient(to right, var(--teal), transparent);
+      border-radius: 2px;
+    }
+
+    /* ── SUMMARY ── */
+    .summary p {
+      font-size: 13.5px;
+      line-height: 1.8;
+      color: var(--text);
+    }
+
+    /* ── PROJECTS ── */
+    .project {
+      margin-bottom: 20px;
+      padding-bottom: 20px;
+      border-bottom: 1px dashed var(--border);
+    }
+    .project:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+
+    .project-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 5px;
+    }
+    .project-name {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--navy);
+    }
+    .project-tag {
+      font-family: 'DM Mono', monospace;
+      font-size: 10.5px;
+      color: var(--teal);
+      background: var(--teal-lt);
+      padding: 2px 9px;
+      border-radius: 4px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .project p {
+      font-size: 12.5px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    /* ── EDUCATION ── */
+    .edu-entry { margin-bottom: 18px; }
+    .edu-title { font-size: 14px; font-weight: 700; color: var(--navy); }
+    .edu-school {
+      font-size: 12.5px;
+      color: var(--teal);
+      margin: 2px 0;
+    }
+    .edu-date {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+    .edu-note {
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* ── SIDE: SKILLS ── */
+    .skill-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 11px;
+    }
+    .skill-name { font-size: 12.5px; font-weight: 500; color: var(--text); }
+    .skill-bar {
+      width: 100px;
+      height: 5px;
+      background: var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .skill-fill {
+      height: 100%;
+      background: linear-gradient(to right, var(--teal), var(--teal2));
+      border-radius: 10px;
+    }
+
+    /* ── SIDE: SERVICES ── */
+    .service-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--teal);
+      border-radius: 6px;
+      padding: 10px 12px;
+      margin-bottom: 9px;
+    }
+    .service-card .svc-title {
+      font-size: 12.5px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 3px;
+    }
+    .service-card .svc-desc {
+      font-size: 11px;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    /* ── SIDE: TOOLS ── */
+    .tools-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .tool-tag {
+      font-size: 11px;
+      font-family: 'DM Mono', monospace;
+      background: white;
+      border: 1px solid var(--border);
+      color: var(--tag-txt);
+      padding: 3px 9px;
+      border-radius: 4px;
+    }
+
+    /* ── SIDE: ATTRIBUTES ── */
+    .attr-list {
+      list-style: none;
+    }
+    .attr-list li {
+      font-size: 12.5px;
+      color: var(--text);
+      padding: 5px 0;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .attr-list li::before {
+      content: '';
+      width: 6px; height: 6px;
+      background: var(--teal);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .attr-list li:last-child { border-bottom: none; }
+
+    /* ── REFERENCE ── */
+    .ref-box {
+      background: var(--gray);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 14px 16px;
+    }
+    .ref-name { font-size: 13.5px; font-weight: 700; color: var(--navy); }
+    .ref-title { font-size: 11.5px; color: var(--muted); margin: 3px 0 6px; line-height: 1.5; }
+    .ref-email {
+      font-family: 'DM Mono', monospace;
+      font-size: 11.5px;
+      color: var(--teal);
+    }
+
+    /* ── PRINT ── */
+    @media print {
+      body { background: white; padding: 0; }
+      .page { box-shadow: none; border-radius: 0; }
+    }
+
+    @media (max-width: 640px) {
+      .cv-body { grid-template-columns: 1fr; }
+      .main-col { padding: 28px 24px; border-right: none; border-bottom: 1px solid var(--border); }
+      .side-col { padding: 28px 24px; }
+      header { padding: 36px 24px 28px; }
+      .header-name h1 { font-size: 28px; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- ══ HEADER ══ -->
+  <header>
+    <div class="header-top">
+      <div class="avatar">AK</div>
+      <div class="header-name">
+        <h1>Asbel <span>Kipkosgei</span></h1>
+        <div class="title-pills">
+          <span class="pill">Freelancer</span>
+          <span class="pill">Data Entry Specialist</span>
+          <span class="pill">Python Developer</span>
+          <span class="pill">Virtual Assistant</span>
+        </div>
+      </div>
+    </div>
+    <div class="contact-bar">
+      <div class="contact-item"><span class="icon">📞</span> 0740 270 130</div>
+      <div class="contact-item"><span class="icon">✉</span> biwottasbel4@gmail.com</div>
+      <div class="contact-item"><span class="icon">🔗</span><a href="https://www.linkedin.com/in/asbel-kipkosgei-in2030" target="_blank">linkedin.com/in/asbel-kipkosgei-in2030</a></div>
+      <div class="contact-item"><span class="icon">📍</span> Nairobi, Kenya </div>
+    </div>
+  </header>
+
+  <!-- ══ BODY ══ -->
+  <div class="cv-body">
+
+    <!-- ══ MAIN COLUMN ══ -->
+    <div class="main-col">
+
+      <!-- PROFESSIONAL SUMMARY -->
+      <div class="section summary">
+        <div class="section-title">Professional Summary</div>
+        <p>
+          A highly motivated and detail-oriented Electrical and Telecommunication Engineering student
+          at Multimedia University of Kenya, offering reliable freelance services in data entry,
+          virtual assistance, Python scripting, and web-related tasks. Although early in my
+          professional journey, I bring strong technical skills, a fast learning ability, and a
+          genuine commitment to delivering high-quality work on time. I am passionate about
+          technology, organized in my approach, and dedicated to helping clients achieve their goals
+          efficiently. Available for remote and online work on platforms including Fiverr and Upwork.
+        </p>
+      </div>
+
+      <!-- PROJECTS -->
+      <div class="section">
+        <div class="section-title">Projects</div>
+
+        <div class="project">
+          <div class="project-header">
+            <span class="project-name">Calculator Application</span>
+            <span class="project-tag">Python</span>
+          </div>
+          <p>Designed and developed a command-line calculator in Python supporting arithmetic operations with clean input handling and error management.</p>
+        </div>
+
+        <div class="project">
+          <div class="project-header">
+            <span class="project-name">Expense Tracker Application</span>
+            <span class="project-tag">Python</span>
+          </div>
+          <p>Built a personal expense tracking tool that allows users to log, categorize, and review spending data — demonstrating file I/O, data organization, and structured programming.</p>
+        </div>
+
+        <div class="project">
+          <div class="project-header">
+            <span class="project-name">Student Management System</span>
+            <span class="project-tag">Python / Database</span>
+          </div>
+          <p>Created a student records system with full CRUD functionality, applying database concepts and user-friendly menu-driven interaction.</p>
+        </div>
+
+        <div class="project">
+          <div class="project-header">
+            <span class="project-name">Simple Automation Script</span>
+            <span class="project-tag">Python</span>
+          </div>
+          <p>Developed a Python script to automate repetitive file management and data processing tasks, saving time and reducing manual errors.</p>
+        </div>
+
+        <div class="project">
+          <div class="project-header">
+            <span class="project-name">Web Development Projects</span>
+            <span class="project-tag">HTML / CSS / JS</span>
+          </div>
+          <p>Independently built multiple responsive websites with clean layouts, demonstrating front-end development ability and attention to UI/UX detail.</p>
+        </div>
+
+        <div class="project">
+          <div class="project-header">
+            <span class="project-name">Home Network Setup &amp; Configuration</span>
+            <span class="project-tag">Networking</span>
+          </div>
+          <p>Set up and configured a functional home network including router installation, IP addressing, device connectivity, and basic security settings.</p>
+        </div>
+      </div>
+
+      <!-- EDUCATION -->
+      <div class="section">
+        <div class="section-title">Education</div>
+
+        <div class="edu-entry">
+          <div class="edu-title">BSc. Electrical &amp; Telecommunication Engineering</div>
+          <div class="edu-school">Multimedia University of Kenya, Nairobi</div>
+          <div class="edu-date">2025 – Present &nbsp;·&nbsp; Year 1 | Starting Year 2: September 2026</div>
+          <div class="edu-note">Coursework: Network Design, Digital Communications, Computer Networks, Database Systems, Programming Fundamentals.</div>
+        </div>
+
+        <div class="edu-entry">
+          <div class="edu-title">Kenya Certificate of Secondary Education (KCSE)</div>
+          <div class="edu-school">St. Anthony's Boys High School, Kenya</div>
+          <div class="edu-date">Completed 2024</div>
+          <div class="edu-note">Strong performance in Mathematics, Physics, and Computer Studies.</div>
+        </div>
+      </div>
+
+      <!-- REFERENCES -->
+      <div class="section">
+        <div class="section-title">References</div>
+        <div class="ref-box">
+          <div class="ref-name">Mr. Edwin Kipyegon Koech</div>
+          <div class="ref-title">Chairman, Department of Electrical &amp; Telecommunication Engineering<br>Multimedia University of Kenya</div>
+          <div class="ref-email">ekipyegon@gmail.com</div>
+        </div>
+      </div>
+
+    </div><!-- /main-col -->
+
+    <!-- ══ SIDE COLUMN ══ -->
+    <div class="side-col">
+
+      <!-- SKILLS -->
+      <div class="section">
+        <div class="section-title">Skills</div>
+        <div class="skill-item"><span class="skill-name">Python Programming</span><div class="skill-bar"><div class="skill-fill" style="width:70%"></div></div></div>
+        <div class="skill-item"><span class="skill-name">Data Entry</span><div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div></div>
+        <div class="skill-item"><span class="skill-name">Microsoft Excel</span><div class="skill-bar"><div class="skill-fill" style="width:75%"></div></div></div>
+        <div class="skill-item"><span class="skill-name">Microsoft Word</span><div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div></div>
+        <div class="skill-item"><span class="skill-name">Internet Research</span><div class="skill-bar"><div class="skill-fill" style="width:88%"></div></div></div>
+        <div class="skill-item"><span class="skill-name">Web Development</span><div class="skill-bar"><div class="skill-fill" style="width:65%"></div></div></div>
+        <div class="skill-item"><span class="skill-name">Networking Basics</span><div class="skill-bar"><div class="skill-fill" style="width:60%"></div></div></div>
+        <div class="skill-item"><span class="skill-name">Problem Solving</span><div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div></div>
+        <div class="skill-item"><span class="skill-name">Communication</span><div class="skill-bar"><div class="skill-fill" style="width:82%"></div></div></div>
+        <div class="skill-item"><span class="skill-name">Fast Typing</span><div class="skill-bar"><div class="skill-fill" style="width:78%"></div></div></div>
+      </div>
+
+      <!-- SERVICES I OFFER -->
+      <div class="section">
+        <div class="section-title">Services I Offer</div>
+        <div class="service-card">
+          <div class="svc-title">Data Entry</div>
+          <div class="svc-desc">Fast, accurate data input into spreadsheets, databases &amp; online platforms.</div>
+        </div>
+        <div class="service-card">
+          <div class="svc-title">Virtual Assistance</div>
+          <div class="svc-desc">Scheduling, email management, research &amp; general admin support.</div>
+        </div>
+        <div class="service-card">
+          <div class="svc-title">Web Research</div>
+          <div class="svc-desc">Thorough internet research, data gathering &amp; organized reporting.</div>
+        </div>
+        <div class="service-card">
+          <div class="svc-title">Basic Python Scripts</div>
+          <div class="svc-desc">Automation scripts, calculators, data tools &amp; file utilities.</div>
+        </div>
+        <div class="service-card">
+          <div class="svc-title">File Conversion</div>
+          <div class="svc-desc">Converting between PDF, Word, Excel, CSV &amp; other formats.</div>
+        </div>
+        <div class="service-card">
+          <div class="svc-title">Website Assistance</div>
+          <div class="svc-desc">Basic HTML/CSS edits &amp; content population for small sites.</div>
+        </div>
+        <div class="service-card">
+          <div class="svc-title">Document Formatting</div>
+          <div class="svc-desc">Professional formatting of Word/PDF documents, CVs &amp; reports.</div>
+        </div>
+      </div>
+
+      <!-- TOOLS & TECHNOLOGIES -->
+      <div class="section">
+        <div class="section-title">Tools &amp; Technologies</div>
+        <div class="tools-grid">
+          <span class="tool-tag">Python 3</span>
+          <span class="tool-tag">MS Word</span>
+          <span class="tool-tag">MS Excel</span>
+          <span class="tool-tag">Google Docs</span>
+          <span class="tool-tag">Google Sheets</span>
+          <span class="tool-tag">VS Code</span>
+          <span class="tool-tag">HTML &amp; CSS</span>
+          <span class="tool-tag">JavaScript</span>
+          <span class="tool-tag">GitHub</span>
+          <span class="tool-tag">Canva</span>
+          <span class="tool-tag">Google Drive</span>
+          <span class="tool-tag">Zoom</span>
+          <span class="tool-tag">Google Meet</span>
+        </div>
+      </div>
+
+      <!-- PERSONAL ATTRIBUTES -->
+      <div class="section">
+        <div class="section-title">Personal Attributes</div>
+        <ul class="attr-list">
+          <li>Quick Learner</li>
+          <li>Detail-Oriented</li>
+          <li>Deadline-Driven</li>
+          <li>Self-Motivated</li>
+          <li>Team Player</li>
+          <li>Adaptable</li>
+          <li>Reliable &amp; Honest</li>
+          <li>Strong Communicator</li>
+          <li>Proactive</li>
+        </ul>
+      </div>
+
+    </div><!-- /side-col -->
+  </div><!-- /cv-body -->
+</div><!-- /page -->
+</body>
+</html>
